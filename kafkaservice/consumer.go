@@ -27,7 +27,7 @@ func Consume_from_kafka(num_of_messages int) {
 			continue
 		}
 
-		fmt.Printf("Consumed messge: %v", string(msg.Value))
+		fmt.Printf("Consumed messge: %v \n", string(msg.Value))
 
 		num_of_messages -= 1
 		if num_of_messages == 0 {

@@ -2,6 +2,7 @@ package kafkaservice
 
 import (
 	"context"
+	"fmt"
 	"strconv"
 	"time"
 
@@ -22,10 +23,13 @@ func Produce_to_kafka(num_of_messages int) {
 			break
 		}
 
-		producer.WriteMessages(context.Background(), kafka.Message{
+		err := producer.WriteMessages(context.Background(), kafka.Message{
 			Value: []byte(strconv.Itoa(num_of_messages)),
 		})
 
+		if err == nil {
+			fmt.Printf("Producing messge: %v \n", strconv.Itoa(num_of_messages))
+		}
 		num_of_messages -= 1
 		time.Sleep(time.Millisecond * 500)
 	}
