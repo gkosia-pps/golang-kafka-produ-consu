@@ -6,6 +6,7 @@ package cmd
 import (
 	"errors"
 	"fmt"
+	"golang-produ-consu/kafkaservice"
 	"strconv"
 
 	"github.com/spf13/cobra"
@@ -36,6 +37,7 @@ var produceCmd = &cobra.Command{
 
 func produce_messages(num_of_messages int) {
 	fmt.Printf("Producing %d messages", num_of_messages)
+	kafkaservice.Produce_to_kafka(num_of_messages)
 }
 
 func init() {
