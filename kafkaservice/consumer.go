@@ -8,7 +8,7 @@ import (
 	"github.com/segmentio/kafka-go"
 )
 
-func consume_from_kafka(num_of_messages int) {
+func Consume_from_kafka(num_of_messages int) {
 
 	conf := kafka.ReaderConfig{
 		Brokers: []string{"localhost:9094"},

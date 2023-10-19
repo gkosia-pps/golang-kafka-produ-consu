@@ -3,6 +3,7 @@ package cmd
 import (
 	"errors"
 	"fmt"
+	"golang-produ-consu/kafkaservice"
 	"strconv"
 
 	"github.com/spf13/cobra"
@@ -34,7 +35,7 @@ var consumeCmd = &cobra.Command{
 func consume_messages(num_of_messages int) {
 	fmt.Printf("Consuming %d messages", num_of_messages)
 
-	kafkaservice.consume_from_kafka(num_of_messages)
+	kafkaservice.Consume_from_kafka(num_of_messages)
 }
 
 func init() {
