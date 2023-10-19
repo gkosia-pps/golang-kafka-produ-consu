@@ -11,9 +11,10 @@ import (
 func Consume_from_kafka(num_of_messages int) {
 
 	conf := kafka.ReaderConfig{
-		Brokers: []string{"localhost:9094"},
-		Topic:   "data-from-console",
-		GroupID: "goLang-app",
+		Brokers:     []string{"localhost:9094"},
+		Topic:       "data-from-console",
+		GroupID:     "goLang-app",
+		StartOffset: kafka.FirstOffset,
 	}
 
 	consumer := kafka.NewReader(conf)
