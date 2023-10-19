@@ -2,6 +2,8 @@ module golang-produ-consu
 
 go 1.20
 
+
+
 require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/klauspost/compress v1.17.1 // indirect
